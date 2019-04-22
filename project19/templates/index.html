@@ -1,0 +1,42 @@
+<html>
+<head>
+    <style>
+        body{
+            font-family: "Comic Sans MS",sans-serif;
+            margin-bottom: 200px;
+            background-color: orange;
+            padding-top: 60px;
+            box-shadow: 0 0 60px red;
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+       table{
+           background-color: darkslateblue;
+           padding: 20px;
+           border-bottom-left-radius: 20px;
+           border-top-right-radius: 20px;
+           box-shadow: 0 0 10px red;
+       }
+    </style>
+    <form action="/send/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table align="center" border="2">
+            <tr>
+                <th colspan="2">Employee Details</th>
+            </tr>
+            <tr><th>ID NO :</th>
+            <th><input type="number" name="idno" placeholder="Enter idno" required></th></tr>
+            <tr><th>NAME :</th>
+            <th><input type="text" name="name" placeholder="Enter Name" required></th></tr>
+            <tr><th>SALARY :</th>
+            <th><input type="number" name="salary" placeholder="Enter salary" required></th></tr>
+            <tr><th>IMAGE :</th><th><input type="file" name="image" required></th></tr>
+            <tr><th colspan="2"><button type="submit">save </button></th>
+            </tr>
+
+        </table>
+    </form>
+    <h4 align="center"><a href="/employeedetails/">Show Employee Details</a></h4>
+    <h3 align="center">{{ message }}</h3>
+</head>
+</html>
